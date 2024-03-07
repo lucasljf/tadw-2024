@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página 1</title>
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <form>
+    <form onsubmit="return validar()">
         Nome: <br>
         <input type="text" id="nome"> <br><br>
 
@@ -19,7 +20,7 @@
             <option>Profissão2</option>
             <option>Profissão3</option>
         </select>
-        
+
         <input type="submit" value="Enviar">
     </form>
 </body>
