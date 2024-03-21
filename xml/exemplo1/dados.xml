@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alunos>
+    <aluno>
+        <nome>Pedro</nome>
+        <matricula>12312312</matricula>
+    </aluno>
+    <aluno>
+        <nome>Eduardo</nome>
+        <matricula>23423243</matricula>
+    </aluno>
+    <aluno>
+        <nome>Fulano</nome>
+        <matricula>635468476</matricula>
+    </aluno>
+</alunos>
