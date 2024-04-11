@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function teste() {
+            const nome = document.getElementById('nome');
+
+            // if (nome.value == '') {
+            //     alert('Preencha o campo nome');
+            //     return false;
+            // }
+
+            alert('Tamanho: ' + nome.value.length);
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return teste()">
+        <input type="text" name="nome" id="nome"> <br><br>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
