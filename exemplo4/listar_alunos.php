@@ -47,6 +47,8 @@
         }
         ?>
     </table>
+
+    <br><a href="index.html"><< Início</a>
 </body>
 
 </html>
