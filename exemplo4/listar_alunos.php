@@ -19,6 +19,7 @@
         </tr>
         <?php
         require_once "conexao.php";
+        require_once "operacoes.php";
 
         $sql = "SELECT * FROM tb_aluno";
 
@@ -31,11 +32,13 @@
                 $dataCadastro = $linha['dataCadastro'];
                 $idSituacao = $linha['idSituacao'];            
 
-                $sql2 = "SELECT * FROM tb_situacao WHERE id = $idSituacao";
-                $resultado = mysqli_query($conexao, $sql2);
-                $linha2 = mysqli_fetch_array($resultado);
 
-                $nomeSituacao = $linha2['nome'];
+                // $sql2 = "SELECT * FROM tb_situacao WHERE id = $idSituacao";
+                // $resultado = mysqli_query($conexao, $sql2);
+                // $linha2 = mysqli_fetch_array($resultado);
+
+                // $nomeSituacao = $linha2['nome'];
+                $nomeSituacao = buscarNomeSituacaoPorId($conexao, $idSituacao);
 
                 echo "<tr>";
                 echo "<td>$id</td>";
