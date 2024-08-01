@@ -21,26 +21,15 @@
         require_once "conexao.php";
         require_once "operacoes.php";
 
-        $sql = "SELECT * FROM tb_aluno";
+        $resultados = listarAlunos($conexao);
 
-        $resultados = mysqli_query($conexao, $sql);
-
-        if (mysqli_num_rows($resultados)) {
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['id'];
-                $nome = $linha['nome'];
-                $dataCadastro = $linha['dataCadastro'];
-                $idSituacao = $linha['idSituacao'];            
-
-                $nomeSituacao = buscarNomeSituacaoPorId($conexao, $idSituacao);
-
+        foreach ($resultados as $aluno) {
                 echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$nomeSituacao</td>";
-                echo "<td>$nome</td>";
-                echo "<td>$dataCadastro</td>";
+                echo "<td>$aluno[0]</td>";
+                echo "<td>$aluno[1]</td>";
+                echo "<td>$aluno[2]</td>";
+                echo "<td>$aluno[3]</td>";
                 echo "</tr>";
-            }
         }
         ?>
     </table>
