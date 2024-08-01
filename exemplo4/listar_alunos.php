@@ -27,13 +27,19 @@
         if (mysqli_num_rows($resultados)) {
             while ($linha = mysqli_fetch_array($resultados)) {
                 $id = $linha['id'];
-                $idSituacao = $linha['idSituacao'];
                 $nome = $linha['nome'];
                 $dataCadastro = $linha['dataCadastro'];
+                $idSituacao = $linha['idSituacao'];            
+
+                $sql2 = "SELECT * FROM tb_situacao WHERE id = $idSituacao";
+                $resultado = mysqli_query($conexao, $sql2);
+                $linha2 = mysqli_fetch_array($resultado);
+
+                $nomeSituacao = $linha2['nome'];
 
                 echo "<tr>";
                 echo "<td>$id</td>";
-                echo "<td>$idSituacao</td>";
+                echo "<td>$nomeSituacao</td>";
                 echo "<td>$nome</td>";
                 echo "<td>$dataCadastro</td>";
                 echo "</tr>";
