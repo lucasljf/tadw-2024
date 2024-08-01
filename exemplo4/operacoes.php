@@ -15,7 +15,9 @@ function listarAlunos($conexao)
     $lista = [];
     if (mysqli_stmt_num_rows($stmt) > 0) {
         while (mysqli_stmt_fetch($stmt)) {
-            $lista[] = [$id, $idSituacao, $nome, $dataCadastro];
+            $situacao = buscarNomeSituacaoPorId($conexao, $idSituacao);
+
+            $lista[] = [$id, $situacao, $nome, $dataCadastro];
         }
     }
 

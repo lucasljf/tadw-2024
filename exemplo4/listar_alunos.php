@@ -13,7 +13,7 @@
     <table style="border-style: solid;">
         <tr>
             <td>id</td>
-            <td>idSituacao</td>
+            <td>Situacao</td>
             <td>nome</td>
             <td>dataCadastro</td>
         </tr>
@@ -24,12 +24,12 @@
         $resultados = listarAlunos($conexao);
 
         foreach ($resultados as $aluno) {
-                echo "<tr>";
-                echo "<td>$aluno[0]</td>";
-                echo "<td>$aluno[1]</td>";
-                echo "<td>$aluno[2]</td>";
-                echo "<td>$aluno[3]</td>";
-                echo "</tr>";
+            echo "<tr>";
+            echo "<td>$aluno[0]</td>";
+            echo "<td>$aluno[1]</td>";
+            echo "<td>$aluno[2]</td>";
+            echo "<td>$aluno[3]</td>";
+            echo "</tr>";
         }
         ?>
     </table>
