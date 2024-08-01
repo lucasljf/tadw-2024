@@ -36,7 +36,6 @@ function buscarNomeSituacaoPorId($conexao, $id)
     mysqli_stmt_bind_result($stmt, $nome);
 
     if (mysqli_stmt_fetch($stmt)) {
-        // echo $nome;
         return $nome;
     }
 

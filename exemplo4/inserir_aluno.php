@@ -4,8 +4,6 @@ require_once "conexao.php";
 $idSituacao = $_GET['idSituacao'];
 $nome = $_GET['nome'];
 
-// $sql = "INSERT INTO tb_aluno (idSituacao, nome) VALUES ('$idSituacao', '$nome')";
-
 // Monta o código SQL com parâmetros a serem preenchidos.
 $sql = "INSERT INTO tb_aluno (idSituacao, nome) VALUES (?, ?)";
 
@@ -19,8 +17,6 @@ mysqli_stmt_bind_param($stmt, "is", $idSituacao, $nome);
 // d para float
 // s para string
 // b para blob
-
-// mysqli_query($conexao, $sql);
 
 // Executa a declaração SQL
 mysqli_stmt_execute($stmt);

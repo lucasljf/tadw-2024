@@ -15,20 +15,6 @@
             require_once "conexao.php";
             require_once "operacoes.php";
 
-            // $sql = "SELECT * FROM tb_situacao";
-
-            // $resultados = mysqli_query($conexao, $sql);
-
-            // if (mysqli_num_rows($resultados)) {
-            //     while ($linha = mysqli_fetch_array($resultados)) {
-            //         $idSituacao = $linha['id'];
-            //         $nome = $linha['nome'];
-
-            //         echo "<option value='$idSituacao'>$nome</option>";
-            //     }
-            // }
-
-
             $resultados = listarSituacoes($conexao);
 
             foreach ($resultados as $situacao) {
