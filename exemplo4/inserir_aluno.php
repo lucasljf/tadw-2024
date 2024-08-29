@@ -1,17 +1,18 @@
 <?php
 require_once "conexao.php";
+require_once "operacoes.php";
 
 $idSituacao = $_GET['idSituacao'];
 $nome = $_GET['nome'];
 
 // Monta o código SQL com parâmetros a serem preenchidos.
-$sql = "INSERT INTO tb_aluno (idSituacao, nome) VALUES (?, ?)";
+// $sql = "INSERT INTO tb_aluno (idSituacao, nome) VALUES (?, ?)";
 
 // Prepara a declaração utilizando o comando SQL.
-$stmt = mysqli_prepare($conexao, $sql);
+// $stmt = mysqli_prepare($conexao, $sql);
 
 // Liga as variáveis aos parâmetros (observando seus tipos)
-mysqli_stmt_bind_param($stmt, "is", $idSituacao, $nome);
+// mysqli_stmt_bind_param($stmt, "is", $idSituacao, $nome);
 
 // i para int
 // d para float
@@ -19,9 +20,10 @@ mysqli_stmt_bind_param($stmt, "is", $idSituacao, $nome);
 // b para blob
 
 // Executa a declaração SQL
-mysqli_stmt_execute($stmt);
+// mysqli_stmt_execute($stmt);
 
 // Fecha a declaração
-mysqli_stmt_close($stmt);
+// mysqli_stmt_close($stmt);
+salvarAluno($conexao, $idSituacao, $nome);
 
 header("Location: listar_alunos.php");

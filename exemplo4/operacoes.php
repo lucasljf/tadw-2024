@@ -1,5 +1,14 @@
 <?php
 
+function salvarAluno($conexao, $idSituacao, $nome)
+{
+    $sql = "INSERT INTO tb_aluno (idSituacao, nome) VALUES (?, ?)";
+    $stmt = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_bind_param($stmt, "is", $idSituacao, $nome);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+
 function listarAlunos($conexao)
 {
     $sql = "SELECT * FROM tb_aluno";
