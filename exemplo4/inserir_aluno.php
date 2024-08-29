@@ -24,6 +24,6 @@ $nome = $_GET['nome'];
 
 // Fecha a declaração
 // mysqli_stmt_close($stmt);
-salvarAluno($conexao, $idSituacao, $nome);
+$idInserido = salvarAluno($conexao, $idSituacao, $nome);
 
 header("Location: listar_alunos.php");
