@@ -120,4 +120,124 @@ function atualiza_km_atual($conexao, $km_atual, $idveiculo) {
 
     mysqli_stmt_close($stmt);
 }
+
+function listarFuncionarios($conexao)
+{
+    $sql = "SELECT * FROM funcionario";
+
+    $stmt = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_bind_result($stmt, $id, $nome);
+
+    mysqli_stmt_store_result($stmt);
+
+    $lista = [];
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        while (mysqli_stmt_fetch($stmt)) {
+          $lista[] = [$id, $nome];
+        }
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $lista;
+}
+
+function listarClientes($conexao)
+{
+    $sql = "SELECT * FROM cliente";
+
+    $stmt = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_bind_result($stmt, $id, $nome);
+
+    mysqli_stmt_store_result($stmt);
+
+    $lista = [];
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        while (mysqli_stmt_fetch($stmt)) {
+          $lista[] = [$id, $nome];
+        }
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $lista;
+}
+
+function listarVeiculos($conexao)
+{
+    $sql = "SELECT * FROM veiculo";
+
+    $stmt = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_bind_result($stmt, $id, $km_atual, $marca, $modelo);
+
+    mysqli_stmt_store_result($stmt);
+
+    $lista = [];
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        while (mysqli_stmt_fetch($stmt)) {
+          $lista[] = [$id, $km_atual, $marca, $modelo];
+        }
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $lista;
+}
+
+function listarEmprestimoCliente($conexao, $idcliente) {
+    $sql = "SELECT * FROM emprestimo WHERE idcliente = ?";
+
+    $stmt = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($stmt, "i", $idcliente);
+
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_store_result($stmt);
+    mysqli_stmt_bind_result($stmt, $idemprestimo, $idfuncionario, $idcliente, $data);
+
+    $lista = [];
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        while (mysqli_stmt_fetch($stmt)) {
+          $lista[] = [$idemprestimo, $idfuncionario, $idcliente, $data];
+        }
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $lista;
+}
+
+function listarVeiculosEmprestimo($conexao, $idemprestimo) {
+    $sql = "SELECT idveiculo, km_inicial FROM emprestimo_has_veiculo WHERE idemprestimo = ?";
+
+    $stmt = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($stmt, "i", $idemprestimo);
+
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_store_result($stmt);
+    mysqli_stmt_bind_result($stmt, $idveiculo, $km_inicial);
+
+    $lista = [];
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        while (mysqli_stmt_fetch($stmt)) {
+          $lista[] = [$idveiculo, $km_inicial];
+        }
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $lista;
+}
 ?>

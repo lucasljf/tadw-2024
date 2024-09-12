@@ -50,4 +50,18 @@ require_once "operacoes.php";
 // $emprestimo = 1;
 // $veiculo = 1;
 // atualiza_km_final($conexao, $kmfinal, $emprestimo, $veiculo);
+
+// $lista = listarFuncionarios($conexao);
+// foreach ($lista as $f) {
+//     echo $f[0];
+//     echo $f[1];
+// }
+
+$lista = listarVeiculos($conexao);
+foreach ($lista as $f) {
+    echo $f[0];
+    echo $f[1];
+    echo $f[2];
+    echo $f[3];
+}
 ?>
