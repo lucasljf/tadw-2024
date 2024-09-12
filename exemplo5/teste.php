@@ -40,11 +40,11 @@ require_once "operacoes.php";
 // $veiculo = 1;
 // salvarVeiculoEmprestimo($conexao, $emprestimo, $veiculo);
 
-$emprestimo = 1;
-$valor = 500.40;
-$precokm = 3.40;
-$metodo = 'a vista';
-efetuarPagamento($conexao, $emprestimo, $valor, $precokm, $metodo);
+// $emprestimo = 1;
+// $valor = 500.40;
+// $precokm = 3.40;
+// $metodo = 'a vista';
+// efetuarPagamento($conexao, $emprestimo, $valor, $precokm, $metodo);
 
 // $kmfinal = '40000';
 // $emprestimo = 1;
