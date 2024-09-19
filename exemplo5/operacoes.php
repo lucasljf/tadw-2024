@@ -193,6 +193,31 @@ function listarVeiculos($conexao)
     return $lista;
 }
 
+function listarVeiculoPorId($conexao, $idveiculo)
+{
+    $sql = "SELECT * FROM veiculo WHERE idveiculo = ?";
+
+    $stmt = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($stmt, 'i', $idveiculo);
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_bind_result($stmt, $id, $km_atual, $marca, $modelo);
+
+    mysqli_stmt_store_result($stmt);
+
+    $lista = 0;
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        while (mysqli_stmt_fetch($stmt)) {
+          $lista = [$id, $km_atual, $marca, $modelo];
+        }
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $lista;
+}
+
 function listarEmprestimoCliente($conexao, $idcliente) {
     $sql = "SELECT * FROM emprestimo WHERE idcliente = ?";
 
