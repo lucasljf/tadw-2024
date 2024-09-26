@@ -120,3 +120,25 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+INSERT INTO cliente (nome) VALUES ('ClienteA');
+INSERT INTO cliente (nome) VALUES ('ClienteB');
+INSERT INTO cliente (nome) VALUES ('ClienteC');
+INSERT INTO cliente (nome) VALUES ('ClienteD');
+INSERT INTO cliente (nome) VALUES ('ClienteE');
+INSERT INTO cliente (nome) VALUES ('ClienteF');
+
+INSERT INTO funcionario (nome) VALUES ('FuncionarioA');
+INSERT INTO funcionario (nome) VALUES ('FuncionarioB');
+INSERT INTO funcionario (nome) VALUES ('FuncionarioC');
+INSERT INTO funcionario (nome) VALUES ('FuncionarioD');
+INSERT INTO funcionario (nome) VALUES ('FuncionarioE');
+INSERT INTO funcionario (nome) VALUES ('FuncionarioF');
+
+INSERT INTO veiculo (km_atual, marca, modelo) VALUES('1500','Ford','Ka');
+INSERT INTO veiculo (km_atual, marca, modelo) VALUES('32000','Volkswagen','Fusca');
+INSERT INTO veiculo (km_atual, marca, modelo) VALUES('2500','Ford','Focus');
+INSERT INTO veiculo (km_atual, marca, modelo) VALUES('34500','Fiat','Uno');
+INSERT INTO veiculo (km_atual, marca, modelo) VALUES('100','Volkswagen','Polo');
+INSERT INTO veiculo (km_atual, marca, modelo) VALUES('1320','Ford','Fusion');
