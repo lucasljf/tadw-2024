@@ -1,5 +1,6 @@
 <?php
 // Inclui a biblioteca TCPDF
+// Disponível em: https://tcpdf.org/
 require_once('tcpdf/tcpdf.php');
 
 // Cria um novo PDF

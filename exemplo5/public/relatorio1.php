@@ -1,4 +1,5 @@
 <?php
+// Disponível em: http://www.fpdf.org/
 require_once './fpdf/fpdf.php';
 require_once '../conexao.php';
 require_once '../operacoes.php';
